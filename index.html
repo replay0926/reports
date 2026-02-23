@@ -1,0 +1,4018 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>경매 분석 대시보드 — Antigravity</title>
+  <link rel="stylesheet" href="/reports/css/style.css">
+  
+</head>
+<body class="">
+  <nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/reports/" class="nav-logo">Antigravity</a>
+    <span class="nav-divider">|</span>
+    <a href="/reports/" class="nav-link active">Dashboard</a>
+  </div>
+</nav>
+
+  <main>
+    
+
+<div class="dashboard-header">
+  <div class="dashboard-header-content">
+    <h1>경매 분석 대시보드</h1>
+    <p class="subtitle">서울 상업용 건물 매각예정</p>
+    <div class="dashboard-meta">
+      <div class="chip">수집일시 <strong>2026-02-22</strong></div>
+      <div class="chip">총 <strong>138건</strong></div>
+      <div class="chip">분석완료 <strong>10건</strong></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="stats-bar">
+  
+  
+  <div class="stat-card" data-court="서울중앙지방법원">
+    <div class="label">서울중앙</div>
+    <div class="value">33건</div>
+    <div class="bar"><div class="bar-fill" style="width:24%"></div></div>
+  </div>
+  
+  
+  <div class="stat-card" data-court="서울동부지방법원">
+    <div class="label">서울동부</div>
+    <div class="value">31건</div>
+    <div class="bar"><div class="bar-fill" style="width:22%"></div></div>
+  </div>
+  
+  
+  <div class="stat-card" data-court="서울서부지방법원">
+    <div class="label">서울서부</div>
+    <div class="value">41건</div>
+    <div class="bar"><div class="bar-fill" style="width:30%"></div></div>
+  </div>
+  
+  
+  <div class="stat-card" data-court="서울남부지방법원">
+    <div class="label">서울남부</div>
+    <div class="value">39건</div>
+    <div class="bar"><div class="bar-fill" style="width:28%"></div></div>
+  </div>
+  
+  
+  <div class="stat-card" data-court="서울북부지방법원">
+    <div class="label">서울북부</div>
+    <div class="value">46건</div>
+    <div class="bar"><div class="bar-fill" style="width:33%"></div></div>
+  </div>
+  
+</div>
+
+
+<div class="controls">
+  <div class="controls-inner">
+    <div class="control-group">
+      <label for="court-filter">법원</label>
+      <select id="court-filter">
+        <option value="">전체</option>
+        
+        <option value="서울중앙지방법원">서울중앙 (33)</option>
+        
+        <option value="서울동부지방법원">서울동부 (31)</option>
+        
+        <option value="서울서부지방법원">서울서부 (41)</option>
+        
+        <option value="서울남부지방법원">서울남부 (39)</option>
+        
+        <option value="서울북부지방법원">서울북부 (46)</option>
+        
+      </select>
+    </div>
+    <div class="control-group">
+      <label for="sort-select">정렬</label>
+      <select id="sort-select">
+        <option value="date-asc">매각기일순</option>
+        <option value="price-asc">최저가 낮은순</option>
+        <option value="price-desc">최저가 높은순</option>
+        <option value="rate-asc">저감율 낮은순</option>
+        <option value="rate-desc">저감율 높은순</option>
+      </select>
+    </div>
+    <div class="control-group">
+      <label for="analysis-filter">분석</label>
+      <select id="analysis-filter">
+        <option value="">전체</option>
+        <option value="analyzed">분석완료</option>
+        <option value="pending">미분석</option>
+      </select>
+    </div>
+    <div class="control-group">
+      <label for="search-input">검색</label>
+      <input type="text" id="search-input" placeholder="소재지, 사건번호...">
+    </div>
+    <div class="controls-spacer"></div>
+    <div class="result-count" id="result-count">
+      총 <strong>138</strong>건
+    </div>
+  </div>
+</div>
+
+
+<div class="table-section">
+  <div class="table-card">
+    <table class="auction-table" id="auction-table">
+      <thead>
+        <tr>
+          <th style="width:130px">사건</th>
+          <th>소재지</th>
+          <th style="width:130px;text-align:right">금액</th>
+          <th style="width:100px;text-align:center">저감/기일</th>
+          <th style="width:70px;text-align:center">상태</th>
+          <th style="width:70px;text-align:center">분석</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="5278515000" data-date="2026.03.05" data-rate="40" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2021타경105850 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 서초구 강남대로97길 49-20 3층304호 [집합건물 철근콘크리트구조 23.63㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">12,887,000,000</div>
+            <div class="amount-min">5,278,515,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">40%</div>
+            <div class="schedule-date">2026.03.05</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="211840000" data-date="2026.03.04" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2022타경112169 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 중구 마장로1길 22 1층159호 (신당동,올레오)</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">331,000,000</div>
+            <div class="amount-min">211,840,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.03.04</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 2회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="826000" data-date="2026.02.25" data-rate="6" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2023타경110757 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 중구 장충단로 263 7층34호 (을지로6가,밀리오레) [집합건물 철근콘크리트구조 15.69㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">12,000,000</div>
+            <div class="amount-min">826,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">6%</div>
+            <div class="schedule-date">2026.02.25</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="19661000" data-date="2026.03.05" data-rate="26" data-analyzed="yes">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2023타경114094 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 관악구 복은길 58-19 1층101호 [집합건물 철근콘크리트구조 15.69㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">75,000,000</div>
+            <div class="amount-min">19,661,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">26%</div>
+            <div class="schedule-date">2026.03.05</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 6회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <a href="/reports/auctions/서울중앙_2023타경114094/" class="badge badge-analyzed">분석</a>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="20891000" data-date="2026.03.05" data-rate="6" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2024타경178 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 중구 청계천로 334 5층가504호 [집합건물 철근콘크리트구조 4.99㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">304,000,000</div>
+            <div class="amount-min">20,891,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">6%</div>
+            <div class="schedule-date">2026.03.05</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="47137000" data-date="2026.02.26" data-rate="10" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2024타경734 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 중구 다산로 293 지하1층지에프-02호 (신당동,디오트) [집합건물 철근콘크리트구조 4.99㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">439,000,000</div>
+            <div class="amount-min">47,137,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">10%</div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 10회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="7934000" data-date="2026.03.03" data-rate="16" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2024타경3283 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 중구 을지로45길 72 지하1층119호 (신당동,디자이너크럽) [집합건물 철근콘크리트구조 14.1㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">47,300,000</div>
+            <div class="amount-min">7,934,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">16%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 8회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="133027000" data-date="2026.02.24" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2024타경43542025 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 관악구 관악로 227-6 1층101호 (봉천동,샤르망파크) [집합건물 철근콘크리트구조 14.1㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">43542025</div>
+            <div class="amount-min">133,027,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="133027000" data-date="2026.02.24" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2024타경4354 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 관악구 관악로 227-6 1층101호 (봉천동,샤르망파크) [집합건물 철근콘크리트구조 14.1㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">166,283,200</div>
+            <div class="amount-min">133,027,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="133027000" data-date="2026.02.24" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2025타경102129 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 관악구 관악로 227-6 1층101호 (봉천동,샤르망파크) [집합건물 철근콘크리트구조 14.1㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">166,283,200</div>
+            <div class="amount-min">133,027,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="7097000" data-date="2026.02.26" data-rate="16" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2024타경4996 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 중구 을지로45길 62 4층812호 (신당동,누죤빌딩) [집합건물 철골철근콘크리트조 5.040㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">42,300,000</div>
+            <div class="amount-min">7,097,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">16%</div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="253000000" data-date="2026.03.04" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2024타경5876 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 중구 퇴계로 115 7층747호 (충무로1가,밀리오레명동)</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">253,000,000</div>
+            <div class="amount-min">253,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.03.04</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge">신건</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="265600000" data-date="2026.02.24" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2024타경60602025 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 동작구 보라매로5길 43 지1층지112호 (신대방동,보라매삼성쉐르빌)</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">60602025</div>
+            <div class="amount-min">265,600,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="265600000" data-date="2026.02.24" data-rate="80" data-analyzed="yes">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2024타경6060 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 동작구 보라매로5길 43 지1층지112호 (신대방동,보라매삼성쉐르빌)</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">332,000,000</div>
+            <div class="amount-min">265,600,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <a href="/reports/auctions/서울중앙_2024타경6060/" class="badge badge-analyzed">분석</a>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="265600000" data-date="2026.02.24" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2025타경731 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 동작구 보라매로5길 43 지1층지112호 (신대방동,보라매삼성쉐르빌)</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">332,000,000</div>
+            <div class="amount-min">265,600,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="72093000" data-date="2026.02.24" data-rate="26" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2024타경109242 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강남구 역삼로11길 17 (역삼동,풀향기주택)</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">275,011,200</div>
+            <div class="amount-min">72,093,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">26%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="31540000" data-date="2026.03.03" data-rate="16" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2024타경111870 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 중구 을지로 264 1층1087호 (을지로6가,동대문패션티브이) [집합건물 철근콘크리트구조 13.44㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">188,000,000</div>
+            <div class="amount-min">31,540,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">16%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 8회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="395200000" data-date="2026.02.24" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2024타경116158 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 서초구 강남대로49길 11 1층101호 (서초동,강남헤븐리치더골드181) [집합건물 철근콘크리트구조 13.44㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">494,000,000</div>
+            <div class="amount-min">395,200,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="37314000" data-date="2026.02.25" data-rate="13" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2024타경120676 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 관악구 남부순환로 1466(신림동) 9층904호 (신림동,몽삐에뜨골드) [집합건물 철근콘크리트구조 24.18㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">278,000,000</div>
+            <div class="amount-min">37,314,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">13%</div>
+            <div class="schedule-date">2026.02.25</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 9회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울중앙지방법원" data-price="31460000" data-date="2026.02.26" data-rate="10" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울중앙</div>
+            <div class="case-no">2024타경120683 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 관악구 남부순환로 1466(신림동) 7층707호 (신림동,몽삐에뜨골드) [집합건물 철근콘크리트구조 24.18㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">293,000,000</div>
+            <div class="amount-min">31,460,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">10%</div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 10회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="3362117000" data-date="2026.03.09" data-rate="26" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2023타경54492 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 광진구 광나루로56길 29 (구의동,현대프라임아파트유치원동) [토지 대 46623.9㎡ 공유자 지분 중 46623.9분의 191.162 정재성 지분,  공유자 지분 중 46623.9분의 296.3011 정구성 지분, 공유자 지분 중 46623.9분의 238.9525 정유진 지분]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">12,825,458,210</div>
+            <div class="amount-min">3,362,117,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">26%</div>
+            <div class="schedule-date">2026.03.09</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="18231964000" data-date="2026.02.23" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2023타경603362024 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 광진구 광장동 336-1 [토지 주유소용지 684㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">603362024</div>
+            <div class="amount-min">18,231,964,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.02.23</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="18231964000" data-date="2026.02.23" data-rate="64" data-analyzed="yes">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2023타경60336 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 광진구 광장동 336-1 [토지 주유소용지 684㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">28,487,443,500</div>
+            <div class="amount-min">18,231,964,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.02.23</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <a href="/reports/auctions/서울동부_2023타경60336/" class="badge badge-analyzed">분석</a>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="18231964000" data-date="2026.02.23" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경55904 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 광진구 광장동 336-1 [토지 주유소용지 684㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">28,487,443,500</div>
+            <div class="amount-min">18,231,964,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.02.23</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="18231964000" data-date="2026.02.23" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경997 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 광진구 광장동 336-1 [토지 주유소용지 684㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">28,487,443,500</div>
+            <div class="amount-min">18,231,964,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.02.23</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="18231964000" data-date="2026.02.23" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2025타경50272 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 광진구 광장동 336-1 [토지 주유소용지 684㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">28,487,443,500</div>
+            <div class="amount-min">18,231,964,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.02.23</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="18231964000" data-date="2026.02.23" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경50343 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 광진구 광장동 336-1 [토지 주유소용지 684㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">28,487,443,500</div>
+            <div class="amount-min">18,231,964,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.02.23</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="18231964000" data-date="2026.02.23" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경61015 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 광진구 광장동 336-1 [토지 주유소용지 684㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">28,487,443,500</div>
+            <div class="amount-min">18,231,964,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.02.23</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="211968000" data-date="2026.03.09" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경1600 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 광진구 자양로 113 1동 3층305호 (자양동,구의현대하이엘) [집합건물 철근콘크리트구조 76.47㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">414,000,000</div>
+            <div class="amount-min">211,968,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.03.09</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="256000000" data-date="2026.03.09" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경1709 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 광진구 아차산로78길 12 지하층101호 (광장동,워커힐일신아파트 상가동)</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">400,000,000</div>
+            <div class="amount-min">256,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.03.09</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 2회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="701440000" data-date="2026.03.09" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경2931 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 광진구 광나루로 369 지하1층비-125호 (군자동,광진두산위브파크) [집합건물 철근콘크리트구조  24.00㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">1,370,000,000</div>
+            <div class="amount-min">701,440,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.03.09</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="224768000" data-date="2026.03.09" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경3040 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 성동구 성수일로12길 26 1층111호 (성수동2가,서울숲코리아아이티센터) [집합건물 철근콘크리트구조  24.00㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">439,000,000</div>
+            <div class="amount-min">224,768,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.03.09</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="248000000" data-date="2026.02.23" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경3361 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 송파구 새말로11길 9 2층203호 (문정동,더빌1) [집합건물 철근콘크리트구조 41.28㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">310,000,000</div>
+            <div class="amount-min">248,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.02.23</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="218400000" data-date="2026.02.23" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경3613 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강동구 천호대로176길 10-9(성내동) 3층301호 (성내동,화영하우스7차) [집합건물 철근콘크리트구조 30.74㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">273,000,000</div>
+            <div class="amount-min">218,400,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.02.23</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="244000000" data-date="2026.03.09" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경516742025 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 송파구 백제고분로39길 3-7 1동 1층101호 (석촌동,리치팰리스) [집합건물 철근콘크리트구조   31.57㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">516742025</div>
+            <div class="amount-min">244,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.03.09</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="244000000" data-date="2026.03.09" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경51674 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 송파구 백제고분로39길 3-7 1동 1층101호 (석촌동,리치팰리스) [집합건물 철근콘크리트구조   31.57㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">305,000,000</div>
+            <div class="amount-min">244,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.03.09</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="244000000" data-date="2026.03.09" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2025타경51165 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 송파구 백제고분로39길 3-7 1동 1층101호 (석촌동,리치팰리스) [집합건물 철근콘크리트구조   31.57㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">305,000,000</div>
+            <div class="amount-min">244,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.03.09</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="4096000" data-date="2026.02.23" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경55881 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 광진구 광나루로56길 85 7층시087호 (구의동,테크노-마트21) [집합건물 철근콘크리트구조  80.22㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">8,000,000</div>
+            <div class="amount-min">4,096,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.02.23</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="855040000" data-date="2026.02.23" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경567302024 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강동구 구천면로24길 9 1층101호 (천호동,엘림스퀘어2) [집합건물 철근콘크리트구조  80.22㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">567302024</div>
+            <div class="amount-min">855,040,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.02.23</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="855040000" data-date="2026.02.23" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경56730 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강동구 구천면로24길 9 1층101호 (천호동,엘림스퀘어2) [집합건물 철근콘크리트구조  80.22㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">1,670,000,000</div>
+            <div class="amount-min">855,040,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.02.23</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="855040000" data-date="2026.02.23" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경56617 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강동구 구천면로24길 9 1층101호 (천호동,엘림스퀘어2) [집합건물 철근콘크리트구조  80.22㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">1,670,000,000</div>
+            <div class="amount-min">855,040,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.02.23</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="697600000" data-date="2026.03.09" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경58101 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 송파구 위례송파로 77(거여동) 1층110호 (거여동,우성어반타워) [집합건물 철근콘크리트구조 37.74㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">1,090,000,000</div>
+            <div class="amount-min">697,600,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.03.09</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 2회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="524800000" data-date="2026.03.09" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경59104 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 송파구 오금로11길 37 2층상가206호 (방이동,대명벨리온) [집합건물 철근콘크리트구조 61.49㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">656,000,000</div>
+            <div class="amount-min">524,800,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.03.09</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="17000000" data-date="2026.03.09" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경60135 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 광진구 광나루로56길 85 2층시097호 (구의동,테크노-마트21)</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">17,000,000</div>
+            <div class="amount-min">17,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.03.09</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge">신건</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="704512000" data-date="2026.02.23" data-rate="40" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경60432 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강동구 천호대로159길 20 지1층비103호 (천호동,로데오팰리스) [집합건물 철근콘크리트구조 제2종근린생활시설 196.14㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">1,720,000,000</div>
+            <div class="amount-min">704,512,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">40%</div>
+            <div class="schedule-date">2026.02.23</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 4회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="108160000" data-date="2026.02.23" data-rate="64" data-analyzed="yes">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경60562 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 송파구 송파대로40길 7-9 1층 101호 (송파동,진웅파크빌) [집합건물 철근콘크리트구조 22.57㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">169,000,000</div>
+            <div class="amount-min">108,160,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.02.23</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 2회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <a href="/reports/auctions/서울동부_2024타경60562/" class="badge badge-analyzed">분석</a>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울동부지방법원" data-price="578560000" data-date="2026.03.09" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울동부</div>
+            <div class="case-no">2024타경62452 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 송파구 위례송파로5길 5 1층114호 (거여동,송파헤븐시티더테라스) [집합건물 철근콘크리트구조 42.406㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">1,130,000,000</div>
+            <div class="amount-min">578,560,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.03.09</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="400179000" data-date="2026.03.03" data-rate="40" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2024타경74 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 서대문구 가좌로 70 지1층 비01호 (홍은동,브엘세바빌딩) [집합건물 철근콘크리트구조 130.35㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">977,000,000</div>
+            <div class="amount-min">400,179,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">40%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 4회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="100864000" data-date="2026.02.24" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2024타경2919 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 진관3로 32 5층비505호 (진관동,은평뉴타운파크앤타워) [집합건물 철근콘크리트구조 23.68㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">197,000,000</div>
+            <div class="amount-min">100,864,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="972800000" data-date="2026.03.03" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2024타경29332025 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 마포구 월드컵로34길 6 1층101호 (성산동,태림센트윈2) [집합건물 철근콘크리트구조 108.35㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">29332025</div>
+            <div class="amount-min">972,800,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 2회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="972800000" data-date="2026.03.03" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2024타경2933 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 마포구 월드컵로34길 6 1층101호 (성산동,태림센트윈2) [집합건물 철근콘크리트구조 108.35㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">1,520,000,000</div>
+            <div class="amount-min">972,800,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 2회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="972800000" data-date="2026.03.03" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51055 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 마포구 월드컵로34길 6 1층101호 (성산동,태림센트윈2) [집합건물 철근콘크리트구조 108.35㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">1,520,000,000</div>
+            <div class="amount-min">972,800,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 2회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="1705632000" data-date="2026.02.24" data-rate="40" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2024타경526242024 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 마포구 아현동 327-30 [토지 대 643.3㎡ 갑구 1번 김영자 지분 57060000분의2056256, 갑구 4번 김영자 지분 57060000분의 88886,  갑구 43번  김영자 지분 57060000분의 2376075 합계 28530000분의 2260608.5 김영자 지분전부]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">526242024</div>
+            <div class="amount-min">1,705,632,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">40%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="1705632000" data-date="2026.02.24" data-rate="40" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2024타경52624 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 마포구 아현동 327-30 [토지 대 643.3㎡ 갑구 1번 김영자 지분 57060000분의2056256, 갑구 4번 김영자 지분 57060000분의 88886,  갑구 43번  김영자 지분 57060000분의 2376075 합계 28530000분의 2260608.5 김영자 지분전부]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">57060000</div>
+            <div class="amount-min">1,705,632,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">40%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="1705632000" data-date="2026.02.24" data-rate="40" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2024타경57636 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 마포구 아현동 327-30 [토지 대 643.3㎡ 갑구 1번 김영자 지분 57060000분의2056256, 갑구 4번 김영자 지분 57060000분의 88886,  갑구 43번  김영자 지분 57060000분의 2376075 합계 28530000분의 2260608.5 김영자 지분전부]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">57060000</div>
+            <div class="amount-min">1,705,632,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">40%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="425600000" data-date="2026.02.24" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2024타경57476 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 마포구 월드컵로20길 21-11 2층202호 (성산동,어썸시티) [집합건물 철근콘크리트구조 72.22㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">532,000,000</div>
+            <div class="amount-min">425,600,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="8237665000" data-date="2026.03.03" data-rate="79" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2024타경580112024 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 서대문구 창천동 31-55 [토지 대 180.5㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">580112024</div>
+            <div class="amount-min">8,237,665,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">79%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="8237665000" data-date="2026.03.03" data-rate="79" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2024타경58011 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 서대문구 창천동 31-55 [토지 대 180.5㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">10,297,081,700</div>
+            <div class="amount-min">8,237,665,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">79%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="8237665000" data-date="2026.03.03" data-rate="79" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2024타경57704 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 서대문구 창천동 31-55 [토지 대 180.5㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">10,297,081,700</div>
+            <div class="amount-min">8,237,665,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">79%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="96969000" data-date="2026.03.03" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2024타경594892024 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 마포구 성암로5길 46 지1층비101호 [집합건물 철근콘크리트구조 29.8㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">594892024</div>
+            <div class="amount-min">96,969,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="96969000" data-date="2026.03.03" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2024타경59489 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 마포구 성암로5길 46 지1층비101호 [집합건물 철근콘크리트구조 29.8㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">189,392,160</div>
+            <div class="amount-min">96,969,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="96969000" data-date="2026.03.03" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2024타경65422 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 마포구 성암로5길 46 지1층비101호 [집합건물 철근콘크리트구조 29.8㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">189,392,160</div>
+            <div class="amount-min">96,969,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="149422000" data-date="2026.03.03" data-rate="32" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2024타경60557 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 서대문구 증가로8길 24-2 지층비01호 [토지 대 218.5㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">456,000,000</div>
+            <div class="amount-min">149,422,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">32%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 5회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="4065350000" data-date="2026.03.03" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2024타경625082025 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 서대문구 창천동 13-13 [토지 대 218.5㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">625082025</div>
+            <div class="amount-min">4,065,350,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="4065350000" data-date="2026.03.03" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2024타경62508 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 서대문구 창천동 13-13 [토지 대 218.5㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">7,940,137,500</div>
+            <div class="amount-min">4,065,350,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="4065350000" data-date="2026.03.03" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51556 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 서대문구 창천동 13-13 [토지 대 218.5㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">7,940,137,500</div>
+            <div class="amount-min">4,065,350,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="175000000" data-date="2026.02.24" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2024타경64122 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 서대문구 가좌로 133 2층201호</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">175,000,000</div>
+            <div class="amount-min">175,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge">신건</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="225280000" data-date="2026.03.03" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경118 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 서대문구 통일로36가길 24 1층101호 (홍제동,아트빌리지케이) [집합건물 철근콘크리트구조 59.19㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">440,000,000</div>
+            <div class="amount-min">225,280,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="616800000" data-date="2026.02.24" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경200 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 진관동 62 은평스카이뷰자이 판매시설 1층120호 [집합건물 철근콘크리트구조 44.32㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">771,000,000</div>
+            <div class="amount-min">616,800,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="108544000" data-date="2026.03.03" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경217 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 대조동 240 팜스퀘어 15층에이-016호 [집합건물 철골철근콘크리트조 49.62㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">212,000,000</div>
+            <div class="amount-min">108,544,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="785600000" data-date="2026.02.24" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경521 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 갈현동 548 (유)갈현상가 3층307호 [집합건물 철근콘크리트구조 127.08㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">982,000,000</div>
+            <div class="amount-min">785,600,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="86400000" data-date="2026.02.24" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경743 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 응암동 365-38 다베로 1층102호 [집합건물 철근콘크리트구조 28.26㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">135,000,000</div>
+            <div class="amount-min">86,400,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 2회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="1046442000" data-date="2026.03.03" data-rate="79" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경965 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 마포구 신공덕동 14-8 [토지 대 79㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">1,308,052,740</div>
+            <div class="amount-min">1,046,442,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">79%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="876800000" data-date="2026.02.24" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경50342 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 서대문구 이화여대5길 12 1동 1층101호 (대현동,송스8) [집합건물 철근콘크리트구조 103.59㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">1,370,000,000</div>
+            <div class="amount-min">876,800,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 2회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="186368000" data-date="2026.02.24" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51020 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 서대문구 홍제동 192-29 1층102호 [집합건물 철근콘크리트구조 42.45㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">364,000,000</div>
+            <div class="amount-min">186,368,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="162611000" data-date="2026.03.03" data-rate="40" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51028 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 응암동 125-11 아우르미 5층503호 [집합건물 철근콘크리트구조 47.78㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">397,000,000</div>
+            <div class="amount-min">162,611,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">40%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 4회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="161000000" data-date="2026.02.24" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51031 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 용산구 용산동2가 5-9 3층302호 [집합건물 철근콘크리트구조 18.91㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">161,000,000</div>
+            <div class="amount-min">161,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge">신건</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="178400000" data-date="2026.02.24" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51046 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 불광동 484-64 마하나임불광 12층1205호 [집합건물 철근콘크리트구조 18.91㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">223,000,000</div>
+            <div class="amount-min">178,400,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="723200000" data-date="2026.02.24" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51119 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 녹번동 91-7 시니어캐슬 클라시온 8층801호 [집합건물 철근콘크리트구조 76.97㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">1,130,000,000</div>
+            <div class="amount-min">723,200,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 2회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="349184000" data-date="2026.03.03" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51132 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 마포구 성산동 593-3 동우 자인채 스토리 상암 2층201호 [집합건물 철근콘크리트구조 76.97㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">682,000,000</div>
+            <div class="amount-min">349,184,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="907000000" data-date="2026.02.24" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경512402025 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 녹번동 91-7 시니어캐슬 클라시온 7층712호</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">512402025</div>
+            <div class="amount-min">907,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge">신건</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="907000000" data-date="2026.02.24" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51240 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 녹번동 91-7 시니어캐슬 클라시온 7층712호</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">907,000,000</div>
+            <div class="amount-min">907,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge">신건</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="907000000" data-date="2026.02.24" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51926 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 녹번동 91-7 시니어캐슬 클라시온 7층712호</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">907,000,000</div>
+            <div class="amount-min">907,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge">신건</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="907000000" data-date="2026.02.24" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2026타경50079 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 녹번동 91-7 시니어캐슬 클라시온 7층712호</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">907,000,000</div>
+            <div class="amount-min">907,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge">신건</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="900000000" data-date="2026.03.03" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51364 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 녹번동 91-7 시니어캐슬 클라시온 5층512호</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">900,000,000</div>
+            <div class="amount-min">900,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge">신건</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="11168000" data-date="2026.03.03" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51369 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 응암동 738 해태드림타운 1층122호</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">17,450,000</div>
+            <div class="amount-min">11,168,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="328000000" data-date="2026.02.24" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51454 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 진관동 66 은평뉴타운꿈에그린 지1층비114호 [집합건물 철골철근콘크리트구조 45.26㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">328,000,000</div>
+            <div class="amount-min">328,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge">신건</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="268800000" data-date="2026.03.03" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51455 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 진관동 66 은평뉴타운꿈에그린 지1층비113호 [집합건물 철골철근콘크리트구조 45.26㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">336,000,000</div>
+            <div class="amount-min">268,800,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="125760000" data-date="2026.03.03" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51485 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 응암동 599-15 뉴월드애필리움 2층201호 [집합건물 철근콘크리트구조 35.37㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">157,200,000</div>
+            <div class="amount-min">125,760,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.03.03</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="984000000" data-date="2026.02.24" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51648 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 녹번동 91-7 시니어캐슬 클라시온 8층810호 [집합건물 철골철근콘크리트조 4.97㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">984,000,000</div>
+            <div class="amount-min">984,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge">신건</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="28300000" data-date="2026.02.24" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51671 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 대조동 240 팜스퀘어 6층디-046호 [집합건물 철골철근콘크리트조 4.97㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">28,300,000</div>
+            <div class="amount-min">28,300,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge">신건</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="246000000" data-date="2026.02.24" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51737 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 갈현동 515-31 예림빌5차 2층204호 [집합건물 철근콘크리트구조 48.02㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">246,000,000</div>
+            <div class="amount-min">246,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge">신건</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울서부지방법원" data-price="990000000" data-date="2026.02.24" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울서부</div>
+            <div class="case-no">2025타경51809 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 은평구 녹번동 91-7 시니어캐슬 클라시온 6층607호</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">990,000,000</div>
+            <div class="amount-min">990,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge">신건</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="28015000" data-date="2026.02.26" data-rate="4" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2023타경106914 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 구로구 새말로 97 제10층 제063호 (구로동, 신도림테크노마트) [집합건물 철근콘크리트구조 29.23㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">637,000,000</div>
+            <div class="amount-min">28,015,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">4%</div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="10994000" data-date="2026.03.05" data-rate="4" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2023타경113554 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강서구 공항대로4길 11 제103동 제3층 제304호 (공항동, 에스엠파크빌) [집합건물 철근콘크리트구조 29.23㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">250,000,000</div>
+            <div class="amount-min">10,994,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">4%</div>
+            <div class="schedule-date">2026.03.05</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="540672000" data-date="2026.02.25" data-rate="40" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2023타경121104 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강서구 마곡중앙8로 90 제1층 제129호 (마곡동, 마곡아이파크) [집합건물 철근콘크리트구조 24.150㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">1,320,000,000</div>
+            <div class="amount-min">540,672,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">40%</div>
+            <div class="schedule-date">2026.02.25</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="540672000" data-date="2026.02.25" data-rate="40" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2023타경121128 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강서구 마곡중앙8로 90 제1층 제129호 (마곡동, 마곡아이파크) [집합건물 철근콘크리트구조 24.150㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">1,320,000,000</div>
+            <div class="amount-min">540,672,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">40%</div>
+            <div class="schedule-date">2026.02.25</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="" data-date="" data-rate="" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2023타경124011 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 양천구 오목로 340 (목동, 협성빌딩에이동)</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">11,253,556,480</div>
+            <div class="amount-min"></div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate"></div>
+            <div class="schedule-date"></div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="1879000" data-date="2026.03.05" data-rate="13" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2023타경128686 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 영등포구 선유로 27 제지하1층 제140호 (문래동5가, 대륭오피스텔) [집합건물 철근콘크리트구조 67.41㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">14,000,000</div>
+            <div class="amount-min">1,879,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">13%</div>
+            <div class="schedule-date">2026.03.05</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 9회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="180634000" data-date="2026.02.25" data-rate="40" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2024타경4534 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강서구 마곡중앙6로 11 제지1층 제비103호 (마곡동, 보타닉파크타워3) [집합건물 철근콘크리트구조 67.41㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">441,000,000</div>
+            <div class="amount-min">180,634,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">40%</div>
+            <div class="schedule-date">2026.02.25</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="445440000" data-date="2026.03.04" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2024타경6233 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 영등포구 신길로38길 16 제지1층 제비101호 (신길동, 신길리버스시티) [집합건물 철근콘크리트구조 159.91㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">870,000,000</div>
+            <div class="amount-min">445,440,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.03.04</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="146432000" data-date="2026.02.25" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2024타경6271 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강서구 수명로 78 제6층 제601호 (내발산동, 새롬프라자)</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">286,000,000</div>
+            <div class="amount-min">146,432,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.02.25</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="89293000" data-date="2026.02.26" data-rate="40" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2024타경6295 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 금천구 시흥대로141길 83 제1층 제101호 [집합건물 철근콘크리트조 19.71㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">218,000,000</div>
+            <div class="amount-min">89,293,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">40%</div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 4회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="427213000" data-date="2026.02.26" data-rate="40" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2024타경6370 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 금천구 가산디지털1로 146 5층503호 (가산동,대륭테크노타운22차) [집합건물 철근콘크리트구조 90.72㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">1,043,000,000</div>
+            <div class="amount-min">427,213,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">40%</div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 4회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="38923000" data-date="2026.02.25" data-rate="16" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2024타경111418 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 구로구 중앙로 87-9 제3층 제302호 (고척동, 소담밸리) [집합건물 철근콘크리트구조 49.55㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">232,000,000</div>
+            <div class="amount-min">38,923,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">16%</div>
+            <div class="schedule-date">2026.02.25</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 8회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="175000000" data-date="2026.02.25" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2024타경129297 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 구로구 경인로33길 32-10 제1층 제101호 (개봉동, 다빈빌) [집합건물 철근콘크리트구조 32.76㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">175,000,000</div>
+            <div class="amount-min">175,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.02.25</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge">신건</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="66048000" data-date="2026.03.05" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2024타경142641 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강서구 강서로 507 제지1층 제비01호 (가양동, 오성드림) [집합건물 철근콘크리트구조 39.22㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">129,000,000</div>
+            <div class="amount-min">66,048,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.03.05</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="193000000" data-date="2026.02.24" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2024타경146346 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강서구 초록마을로 157-10 제2층 제206호 (화곡동, 씨티하우스) [집합건물 철근콘크리트구조 26.85㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">193,000,000</div>
+            <div class="amount-min">193,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="186240000" data-date="2026.03.04" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2025타경263 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강서구 강서로5가길 5(화곡동) 제8층 제803호 (화곡동, 화곡팰리스) [집합건물 철근콘크리트구조 26.35㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">291,000,000</div>
+            <div class="amount-min">186,240,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.03.04</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 2회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="363520000" data-date="2026.03.04" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2025타경406 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강서구 마곡동 797-9 매그넘797 제3층 제301호 [집합건물 철근콘크리트구조 55.62㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">568,000,000</div>
+            <div class="amount-min">363,520,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.03.04</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 2회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="593408000" data-date="2026.02.26" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2025타경451 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강서구 등촌동 849 더리브골드타워 제1층 제104호 [집합건물 철근콘크리트구조 53.82㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">1,159,000,000</div>
+            <div class="amount-min">593,408,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="332000000" data-date="2026.02.25" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2025타경659 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강서구 염창동 261-4 한강지트리타워 제5층 제504호 [집합건물 철근콘크리트구조 37.04㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">332,000,000</div>
+            <div class="amount-min">332,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.02.25</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge">신건</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="704512000" data-date="2026.02.25" data-rate="40" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2025타경8946 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강서구 마곡동 800-15 이너매스마곡2 제1층 제112호 [집합건물 철근콘크리트구조 48.84㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">1,720,000,000</div>
+            <div class="amount-min">704,512,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">40%</div>
+            <div class="schedule-date">2026.02.25</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 4회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="219136000" data-date="2026.02.26" data-rate="51" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2025타경8996 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 양천구 신정동 972-6 퀸즈포디엄 제지하1층 제비101호 [집합건물 철근콘크리트구조 90.8319㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">428,000,000</div>
+            <div class="amount-min">219,136,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">51%</div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 3회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울남부지방법원" data-price="163680000" data-date="2026.03.04" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울남부</div>
+            <div class="case-no">2025타경9071 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 금천구 독산동 961-9 메트로시티 제3층 제304호 [집합건물 철근콘크리트구조 28.71㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">204,600,000</div>
+            <div class="amount-min">163,680,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.03.04</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="24800000" data-date="2026.02.24" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2023타경100759 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 동대문구 왕산로 128(용두동) 5층502호 (용두동,동의보감타워) [집합건물 철근콘크리트조 6.870㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">31,000,000</div>
+            <div class="amount-min">24,800,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="36105000" data-date="2026.02.26" data-rate="16" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2023타경106214 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강북구 도봉로 261 3층329호 (수유동,삼호아파트,수유프라자)</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">215,200,000</div>
+            <div class="amount-min">36,105,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">16%</div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="319744000" data-date="2026.02.24" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2024타경1699 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 성북구 동소문로20나길 47 지하2층비207호 (동선동1가,코아루센타시아)</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">499,600,000</div>
+            <div class="amount-min">319,744,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 2회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="98560000" data-date="2026.02.24" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2024타경2920 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 성북구 동소문로20나길 47 지하2층비208호 (동선동1가,코아루센타시아)</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">154,000,000</div>
+            <div class="amount-min">98,560,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 2회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="372480000" data-date="2026.02.24" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2024타경3763 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 성북구 동소문로20나길 47 지하2층비216호 (동선동1가,코아루센타시아)</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">582,000,000</div>
+            <div class="amount-min">372,480,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 2회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="1388800000" data-date="2026.02.24" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2024타경3787 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 성북구 동소문로20나길 47 지하2층비201-1호 (동선동1가,코아루센타시아)</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">2,170,000,000</div>
+            <div class="amount-min">1,388,800,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 2회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="52429000" data-date="2026.02.24" data-rate="40" data-analyzed="yes">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2024타경5363 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 동대문구 한천로 300 상가동 지하1층비106호 (휘경동,동일스위트리버)</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">128,000,000</div>
+            <div class="amount-min">52,429,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">40%</div>
+            <div class="schedule-date">2026.02.24</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <a href="/reports/auctions/서울북부_2024타경5363/" class="badge badge-analyzed">분석</a>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="24904000" data-date="2026.02.26" data-rate="32" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2024타경5370 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 중랑구 동일로143길 19 3층35호</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">76,000,000</div>
+            <div class="amount-min">24,904,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">32%</div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 5회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="" data-date="2026.02.26" data-rate="" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2024타경115987 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 성북구 보문로38길 43</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">5,770,606,800</div>
+            <div class="amount-min"></div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate"></div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="208486000" data-date="2026.02.26" data-rate="40" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2024타경118320 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 성북구 화랑로1길 17 1층101호 (하월곡동,종암사거리동우리즈힐스) [집합건물 철근콘크리트구조 40.50㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">509,000,000</div>
+            <div class="amount-min">208,486,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">40%</div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 4회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="87245000" data-date="2026.02.26" data-rate="40" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2024타경121067 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 도봉구 도당로 32 1층6호 (방학동,성진파크뷰아파트 1101)</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">213,000,000</div>
+            <div class="amount-min">87,245,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">40%</div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 4회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="32800000" data-date="2026.02.26" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2024타경121586 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 중랑구 봉화산로 194 지하1층비13호 (신내동,신아타운) [집합건물 철근콘크리트구조 257.44㎡ 케이원건설 주식회사 지분 2분의 1 전부]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">41,000,000</div>
+            <div class="amount-min">32,800,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="324000000" data-date="2026.02.26" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2024타경122244 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 중랑구 망우로 275 제지1층 제비101호 (상봉동,로젠하임) [집합건물 철근콘크리트구조 257.44㎡ 케이원건설 주식회사 지분 2분의 1 전부]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">405,000,000</div>
+            <div class="amount-min">324,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="2155430000" data-date="2026.02.26" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2025타경426 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 성북구 상월곡동 57-23 무주공간-에이 [토지 대 89㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">2,155,430,000</div>
+            <div class="amount-min">2,155,430,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-매각">매각</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="264800000" data-date="2026.02.26" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2025타경525 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 중랑구 상봉동 102-7 동인씨엘로103동 3층301호 [집합건물 철근콘크리트구조 50.4㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">331,000,000</div>
+            <div class="amount-min">264,800,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="49920000" data-date="2026.02.26" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2025타경624 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 도봉구 창동 581-28 1층2호 [집합건물 철근콘크리트구조 28.8252㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">78,000,000</div>
+            <div class="amount-min">49,920,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 2회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="216678000" data-date="2026.03.04" data-rate="40" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2025타경815 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 동대문구 휘경동 377 이문휘경지웰에스테이트 근린생활시설씨동 2층씨201호 [집합건물 철근콘크리트구조 28.8252㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">529,000,000</div>
+            <div class="amount-min">216,678,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">40%</div>
+            <div class="schedule-date">2026.03.04</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 4회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="234946000" data-date="2026.03.04" data-rate="32" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2025타경1061 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 도봉구 쌍문동 507-1 에드가쌍문 1층119호 [집합건물 철근콘크리트구조 45.7938㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">717,000,000</div>
+            <div class="amount-min">234,946,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">32%</div>
+            <div class="schedule-date">2026.03.04</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 5회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="501760000" data-date="2026.03.04" data-rate="64" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2025타경1870 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 도봉구 쌍문동 507-1 에드가쌍문 1층107호 [집합건물 철근콘크리트구조 43.2㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">784,000,000</div>
+            <div class="amount-min">501,760,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">64%</div>
+            <div class="schedule-date">2026.03.04</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 2회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="5440000" data-date="2026.03.04" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2025타경2583 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 동대문구 제기동 1140-5 불로장생타워 제10층 제10-9호 [집합건물 철골철근콘크리트구조 5.86㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">6,800,000</div>
+            <div class="amount-min">5,440,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.03.04</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="768000000" data-date="2026.03.04" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2025타경2736 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 강북구 미아동 1351 두원프라자 지하1층102호</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">960,000,000</div>
+            <div class="amount-min">768,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.03.04</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="7760000" data-date="2026.03.04" data-rate="80" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2025타경2828 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 동대문구 제기동 1140-5 불로장생타워 3층3-71호 [집합건물 철골철근콘크리트구조 4.86㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">9,700,000</div>
+            <div class="amount-min">7,760,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">80%</div>
+            <div class="schedule-date">2026.03.04</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge status-유찰">유찰 1회</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+        
+        <tr data-court="서울북부지방법원" data-price="927000000" data-date="2026.02.26" data-rate="100" data-analyzed="no">
+          <td class="col-case">
+            <div class="case-court">서울북부</div>
+            <div class="case-no">2025타경10584 <span class="case-item">[1]</span></div>
+          </td>
+          <td class="col-address">서울특별시 동대문구 답십리로1길 39-5 제2층 제204호 (전농동,청량리창보리버리치1차) [집합건물 철근콘크리트구조 45㎡]</td>
+          <td class="col-amount">
+            <div class="amount-appraisal">927,000,000</div>
+            <div class="amount-min">927,000,000</div>
+          </td>
+          <td class="col-schedule">
+            <div class="schedule-rate">100%</div>
+            <div class="schedule-date">2026.02.26</div>
+          </td>
+          <td class="col-status">
+            
+            
+              <span class="status-badge">신건</span>
+            
+          </td>
+          <td class="col-analysis">
+            
+              <span class="badge badge-pending">미분석</span>
+            
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+<script src="/reports/js/dashboard.js"></script>
+
+  </main>
+  <footer class="site-footer">
+    <p>Antigravity — 경매 분석 대시보드</p>
+  </footer>
+  
+</body>
+</html>
